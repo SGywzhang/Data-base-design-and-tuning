@@ -1,11 +1,7 @@
 ############################################################
-## project2.py - Code template for Project 2 - Normalization 
-## Both for CS5421 and CS4221 students 
+## Database desing Normalization 
 ############################################################
 
-
-### IMPORTANT! Change this to your metric number for grading
-student_no = 'A0194928L' 
 
 from itertools import combinations
 from itertools import permutations
@@ -65,7 +61,6 @@ def all_closures(R, F):
     return result
 
 ## Return the candidate keys of a given schema R and functional dependencies F.
-## NOTE: This function is not graded for CS5421 students.
 def candidate_keys(R, F): 
     result = []
     allElementCombination = getListAllCombinations(R)
@@ -131,7 +126,6 @@ def min_cover(R, FD):
     return processedFD
 
 ## Return all minimal covers reachable from the functional dependencies of a given schema R and functional dependencies F.
-## NOTE: This function is not graded for CS4221 students.
 def min_covers(R, FD):
     minCovers = []
     tempCover = [None]
@@ -159,7 +153,6 @@ def min_covers(R, FD):
     return minCovers 
 
 ## Return all minimal covers of a given schema R and functional dependencies F.
-## NOTE: This function is not graded for CS4221 students.
 def all_min_covers(R, FD):
     return min_covers(R,all_closures(R,FD))
 
@@ -183,12 +176,8 @@ print all_min_covers(R, FD)
 ## Tutorial questions
 R = ['A', 'B', 'C', 'D', 'E']
 FD = [[['A', 'B'],['C']], [['D'],['D', 'B']], [['B'],['E']], [['E'],['D']], [['A', 'B', 'D'],['A', 'B', 'C', 'D']]]
-print('Tutorial question candidate keys:')
 print candidate_keys(R, FD)
-print('Tutorial question min cover:')
 print min_cover(R, FD)
-print('Tutorial question min covers:')
 print min_covers(R, FD)
-print('Tutorial question all min covers:')
 print all_min_covers(R, FD) 
 
