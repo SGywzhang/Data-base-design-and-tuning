@@ -173,7 +173,6 @@ R = ['A', 'B', 'C']
 FD = [[['A', 'B'], ['C']],[['A'], ['B']], [['B'], ['A']]] 
 print min_covers(R, FD)
 print all_min_covers(R, FD)
-## Tutorial questions
 R = ['A', 'B', 'C', 'D', 'E']
 FD = [[['A', 'B'],['C']], [['D'],['D', 'B']], [['B'],['E']], [['E'],['D']], [['A', 'B', 'D'],['A', 'B', 'C', 'D']]]
 print candidate_keys(R, FD)
