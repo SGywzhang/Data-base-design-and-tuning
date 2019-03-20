@@ -24,16 +24,16 @@ select xmlroot
 					(select xmlagg(xmlelement
 					(	
 						name "item",
-						xmlelement(name "id",item.i_id),
-						xmlelement(name "im_id",item.i_im_id),
-						xmlelement(name "name",item.i_name),
-						xmlelement(name "price",item.i_price),
-						xmlelement(name "qty",stock.s_qty)
-					)) from stock , item where stock.w_id = warehouse.w_id
-                 		  			and stock.i_id = item.i_id)
+						xmlelement(name "id",i.i_id),
+						xmlelement(name "im_id",i.i_im_id),
+						xmlelement(name "name",i.i_name),
+						xmlelement(name "price",i.i_price),
+						xmlelement(name "qty",s.s_qty)
+					)) from item inner join stock on item.i_id = stock.i_id
+                 		inner join item i on s.i_id = i.i_id where warehouse.w_id = s.w_id and s.i_id = i.i_id) 
 				)
 			)
 		) 
-	), version 1.0, standalone yes
+	), version '1.0" encoding = "utf-8'
 ) from warehouse
 ) to '/home/cs4221/Desktop/test.xml'
