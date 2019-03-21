@@ -27,9 +27,9 @@ copy(
 								xmlelement
 								(	
 									name "item",
-									xmlelement(name "id",item.i_id),
+									xmlelement(name "item_id",item.i_id),
 									xmlelement(name "im_id",item.i_im_id),
-									xmlelement(name "name",item.i_name),
+									xmlelement(name "item_name",item.i_name),
 									xmlelement(name "price",item.i_price),
 									xmlelement(name "qty",stock.s_qty)
 								)
@@ -42,4 +42,4 @@ copy(
 			order by warehouse.W_id) 
 		), version '1.0" encoding = "utf-8' 
 	) from warehouse
- ) to '/home/cs4221/Desktop/q1.xml'
+) to '/home/cs4221/Desktop/q1.xml'
