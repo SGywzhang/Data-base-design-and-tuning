@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
   <xsl:template match="/">
     <html>
@@ -10,11 +10,11 @@
                                 <th>  Item Name </th>
                                 <th>  Item Qty </th>
                             </tr>
-                            <xsl:for-each select=" warehouses/ warehouse/address[city='Singapore']/.././items/item[qty>975]">
+                            <xsl:for-each select=" warehouses/ warehouse/address[country='Singapore']/.././items/item[qty>975]">
                                       <tr>    
-                                                         <td> <xsl:value-of select= "./../../name"/> </td>
-                                                          <td><xsl:value-of select= "item_name"/></td>   
-                                                          <td><xsl:value-of select= "qty"/></td>
+                                             <td> <xsl:value-of select= "./../../name"/> </td>
+                                              <td><xsl:value-of select= "item_name"/></td>   
+                                              <td><xsl:value-of select= "qty"/></td>
                                        </tr>      
                             </xsl:for-each>
                     </table>
