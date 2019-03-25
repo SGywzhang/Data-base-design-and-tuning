@@ -23,9 +23,26 @@ s = Session()
 #####
 ## Query 
 #####
-query1 = """SELECT *
-            FROM FACT_LINEORDER
-	    LIMIT 1;"""
+query1 =     """select 
+		P_NAME,
+		S_NAME,
+		L_EXTENDEDPRICE,
+		O_ORDERKEY,
+		O_ORDERDATE
+	from 
+		PART,
+		SUPPLIER,
+		LINEITEM,
+		ORDERS,
+		PARTSUPP,
+		CUSTOMER
+	where 
+		PART.P_PARTKEY = PARTSUPP.PS_PARTKEY and 
+		SUPPLIER.S_SUPPKEY = PARTSUPP.PS_SUPPKEY and 
+		PARTSUPP.PS_PARTKEY =LINEITEM.L_PARTKEY and
+		PARTSUPP.PS_SUPPKEY = LINEITEM.L_SUPPKEY and
+		ORDERS.O_ORDERKEY = LINEITEM.L_ORDERKEY and
+		CUSTOMER.C_NAME = 'Customer#000000001';"""
 
 s.execute(query1)
 
