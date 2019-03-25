@@ -1,1 +1,10 @@
 TCP-H project
+
+
+Write Python code that queries the data warehouse with the four following queries by modifying the template file “tpch.py”.
+1. Display the order key, part name, supplier name, order date and extended price for each line order for customer ”Customer#000000001”.
+2. Display the total sum of the extended prices of all line orders for all possible grouping sets of customer region, customer nation and customer market segment for brand ”Brand#13”.
+3. Pricing Summary Report Query (A modification from TPC-H Query 1)
+Display in ascending order of year and month of the order date the total number line orders, the corresponding total sums of their extended prices, discounted extended prices, discounted extended prices plus tax, average quantities, average extended prices, and average discounts for all possible grouping sets of year and month of the order date in this hierarchical order .
+4. Order Priority Checking Query (A modification from TPC-H Query 4)
+This query determines how well the order priority system is working and gives an assessment of customer satisfaction. The Order Priority Checking Query counts the number of orders ordered in which at least one line item was received by the customer later than its committed date (receiptdate > commitdate). The query lists the count of such orders for each order priority sorted in ascending priority order.
