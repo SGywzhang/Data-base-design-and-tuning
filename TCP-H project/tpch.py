@@ -61,9 +61,15 @@ query2 = """select sum (L_EXTENDEDPRICE) as sum_of_extended_price
 
 s.execute(query2)
 
-query3 = """SELECT *
-            FROM FACT_LINEORDER
-	    LIMIT 1;"""
+query3 = """select 
+	sum(l_extendedprice) as sum_base_price,
+	sum(l_extendedprice*(1-l_discount)) as sum_disc_price,
+	sum(l_extendedprice*(1-l_discount)*(1+l_tax)) as sum_charge,
+	avg(l_quantity) as avg_qty, 
+	avg(l_extendedprice) as avg_price,
+	avg(l_discount) as avg_disc
+	from lineitem,orders where orders.o_orderkey = lineitem.l_orderkey
+	group by orders.o_orderdate  order by orders.o_orderdate;"""
 
 s.execute(query3)
 
