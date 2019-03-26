@@ -68,9 +68,10 @@ query3 = """SELECT *
 s.execute(query3)
 
 
-query4 = """SELECT *
-            FROM FACT_LINEORDER
-	    LIMIT 1;"""
+query4 = """select o_orderpriority, count(*) as order_count 
+		from orders where exists 
+		(select *from lineitem where l_orderkey = o_orderkey and l_commitdate < l_receiptdate)
+		group by o_orderpriority order by o_orderpriority;"""
 
 s.execute(query4)
 
