@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+
+<library>
+<album>
+<title>Bua Hati
+</title>
+<artists>
+<artist><name>Anang Ashanty</name><country>Indonesia</country></artist>
+<artist><name>Kris Dayanti</name><country>Indonesia</country></artist>
+</artists>
+<songs>
+<song><title>Timang-Timang</title><duration>5:13</duration></song>
+<song><title>Miliki Diriku</title><duration>5:35</duration></song>
+<song><title>Bua Hati</title><duration>5:07</duration></song>
+</songs>
+<genres>
+<genre>Pop</genre><genre>World</genre>
+</genres>
+<year>1998
+</year>
+</album>
+
+<album>
+<title>Separuh Jiwaku Pergi
+</title>
+<artists>
+<artist><name>Anang Ashanty</name><country>Indonesia</country></artist>
+</artists>
+<songs>
+<song><title>Separuh Jiwaku Pergi</title><duration>5:00</duration></song>
+<song><title>Belajarlah Untuk Cinta</title><duration>5:23</duration></song>
+<song><title>Hujanpun Menangis</title><duration>4:17</duration></song>
+</songs>
+<genres>
+<genre>Pop</genre><genre>World</genre>
+</genres>
+<year>1998
+</year>
+</album>
+
+<album>
+<title>No War
+</title>
+<artists>
+<artist><name>Job Bunjob Pholin</name><country>Thailand</country></artist>
+</artists>
+<songs>
+<song><title>Do Ter Tam</title><duration>4:20</duration></song>
+<song><title>Payam Island</title><duration>4:21</duration></song>
+<song><title>เพียงสักครั้ง</title><duration>3:24</duration></song>
+<song><title>No War</title><duration>5:00</duration></song>
+</songs>
+<genres>
+<genre>Reggae,</genre><genre> Folk</genre><genre>World</genre><genre>Country</genre></genres>
+<year>1998
+</year>
+</album>
+
+</library>
