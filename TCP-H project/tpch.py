@@ -66,7 +66,7 @@ query3 = """select
 	avg(l_extendedprice) as avg_price,
 	avg(l_discount) as avg_disc
 	from lineitem,orders where orders.o_orderkey = lineitem.l_orderkey
-	group by orders.o_orderdate  order by orders.o_orderdate;"""
+	group by rollup (extract(year from orders.o_orderdate),extract(month from orders.o_orderdate));"""
 
 s.execute(query3)
 
