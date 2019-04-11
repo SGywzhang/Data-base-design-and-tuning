@@ -1,1 +1,20 @@
+USING PERIODIC COMMIT LOAD CSV
+WITH HEADERS
+FROM ’file:///university.csv’
+AS line
+CREATE (:university {name: line.name, country: line.country})
 
+USING PERIODIC COMMIT LOAD CSV
+WITH HEADERS
+FROM ’file:///person.csv’
+AS line
+MATCH (u:university {name: line.university, country: line.country})
+MERGE (:person{ name: line.name, job: line.job})-[:almamater]->(u)
+
+USING PERIODIC COMMIT LOAD CSV
+WITH HEADERS
+FROM ’file:///friend.csv’
+AS line
+MATCH (n:person {name:line.name1})
+MATCH (m:person {name:line.name2})
+MERGE (n)-[r:friend]->(m)
