@@ -1,0 +1,21 @@
+USING PERIODIC COMMIT LOAD CSV
+WITH HEADERS
+FROM 'file:///actor.csv'
+AS line
+CREATE (:actor {firstname: line.firstname, lastname: line.lastname})
+
+USING PERIODIC COMMIT LOAD CSV
+WITH HEADERS
+FROM 'file:///movie.csv'
+AS line
+CREATE (:movie {title: line.title, year: line.year})
+
+
+
+USING PERIODIC COMMIT LOAD CSV
+WITH HEADERS
+FROM 'file:///actormovie.csv'
+AS line
+MATCH (n:actor {firstname:line.firstname, lastname:line.lastname})
+MATCH (m:movie {title:line.title, year:line.year})
+MERGE (n)-[r:play]->(m)
