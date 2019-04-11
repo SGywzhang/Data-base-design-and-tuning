@@ -59,7 +59,7 @@ query2 = """select sum (L_EXTENDEDPRICE) as sum_of_extended_price
 s.execute(query2)
 
 query3 = """select
-	count (*) as total_line_orders,
+	count (*) as total_number_line_orders,
 	sum(l_extendedprice) as sum_base_price,
 	sum(l_extendedprice*(1-l_discount)) as sum_disc_price,
 	sum(l_extendedprice*(1-l_discount)*(1+l_tax)) as sum_charge,
