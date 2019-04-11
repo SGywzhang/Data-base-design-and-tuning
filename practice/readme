@@ -18,3 +18,27 @@ AS line
 MATCH (n:person {name:line.name1})
 MATCH (m:person {name:line.name2})
 MERGE (n)-[r:friend]->(m)
+
+
+USING PERIODIC COMMIT LOAD CSV
+WITH HEADERS
+FROM 'file:///member.csv'
+AS line
+CREATE (:member {firstname: line.firstname, lastname: line.lastname, phone: line.phone,
+    email: line.email, city: line.city, state: line.state, zip: line.zip})
+
+USING PERIODIC COMMIT LOAD CSV
+WITH HEADERS
+FROM 'file:///club.csv'
+AS line
+CREATE (:club {clubname: line.clubname})
+
+
+
+USING PERIODIC COMMIT LOAD CSV
+WITH HEADERS
+FROM 'file:///clubmember.csv'
+AS line
+MATCH (n:club {clubname:line.clubname})
+MATCH (m:member {firstname: line.firstname, lastname: line.lastname})
+MERGE (n)-[r:members {title: line.title}]->(m)
