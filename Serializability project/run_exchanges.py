@@ -27,19 +27,25 @@ def balance_swap(sess):
     sess.execute("UPDATE account SET balance =:param3 WHERE id = :param4",{"param3":balance2,"param4":random1})
     sess.execute("UPDATE account SET balance =:param5 WHERE id = :param6",{"param5":balance1,"param6":random2})
 
+    sess.commit()
+    
     return
 
 
 def E_swaps(sess, E):
     start = time.time()
     for i in xrange(0, E):
+    	#while True:
 	    try:
 		balance_swap(sess)
 		time.sleep(0.0001)
 	    except Exception as e:
-		continue
-    stop = time.time()
+                #Shared.deadLock = Shared.deadLock + 1
+		print e		
+		#continue
+	    #break
 
+    stop = time.time()
     return stop-start
 
 ## Create the engine and run the sums
